@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
-var courtSchema = new mongoose.schema({
+var courtSchema = new mongoose.Schema({
   name:     String,
   location: String,
   indoor:   Number,

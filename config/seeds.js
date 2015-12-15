@@ -1,6 +1,7 @@
-var mongoose = require('./config/database');
+var mongoose = require('./database');
 
-var User = require('./models/user');
+var User = require('../models/user');
+var Court = require('../models/court');
 
 var users = [
   { // 0

@@ -10,6 +10,7 @@ userDataService.$inject = ["$http", "$log"];
 function userDataService($http, $log) {
   var user = {
     name:       "Fern",
+    email:      "fern@mail.com",
     handle:     "ferny",
     password:   "12345",
     create:     create,
