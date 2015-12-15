@@ -3,11 +3,13 @@ var mongoose = require('mongoose'),
 
 var userSchema = new mongoose.Schema({
   name:     String,
-  handle:   String,
   email:    String,
+  handle:   String,
   password: String,
   favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Court'}]
 });
+
+// add bcrypt hashing to model
 
 var User = mongoose.model('User', userSchema);
 
