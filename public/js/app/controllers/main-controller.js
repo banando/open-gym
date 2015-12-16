@@ -6,13 +6,15 @@
     .module('app')
     .controller("MainController", MainController);
 
-  MainController.$inject = ['$state', 'userDataService', '$log'];
+  MainController.$inject = ['$state', 'userDataService', '$log', "authService", "tokenService"];
 
-  function MainController($state, userDataService, $log){
+  function MainController($state, userDataService, $log, authService, tokenService){
     var vm = this;
 
     vm.user   = userDataService;
     vm.logOut = logOut;
+    vm.auth   = authService;
+    vm.token  = tokenService;
 
 
     function logOut() {

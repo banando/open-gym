@@ -29,10 +29,20 @@
 
 
   <ui-view></ui-view>
-  <script src="/js/app.js"></script>
-  <script src="/controllers/main-controller.js"></script>
-  <script src="/controllers/login-controller.js"></script>
-  <script src="/controllers/register-controller.js"></script>
-  <script src="/services/user.dataservice.js"></script>
+  <script src="/js/app.module.js"></script>
+  <script src="/js/app.routes.js"></script>
+  <script src="/js/app.config.js"></script>
+  <script src="/js/app/services/auth.service.js"></script>
+  <script src="/js/app/services/token.service.js"></script>
+  <script src="/js/app/services/tokensigning.service.js"></script>
+  <script src="/js/app/services/user.dataservice.js"></script>
+  <script src="/js/app/controllers/main-controller.js"></script>
+  <script src="/js/app/controllers/login-controller.js"></script>
+  <script src="/js/app/controllers/register-controller.js"></script>
+  <script src="/js/app/controllers/login-controller.js"></script>
+  <script src="/js/app/controllers/register-controller.js"></script>
+  <!-- <script async defer
+         src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.GOOGLE_KEY %>&callback=initMap">
+  </script> -->
 </body>
 </html>

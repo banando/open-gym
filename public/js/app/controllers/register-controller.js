@@ -6,12 +6,22 @@
     .module('app')
     .controller("RegisterController", RegisterController);
 
-  RegisterController.$inject = ['$state', 'userDataService', '$log'];
+  RegisterController.$inject = ['$state', 'userDataService', '$log', 'authService'];
 
-  function RegisterController($state, userDataService, $log){
-    var vm = this;
-
+  function RegisterController($state, userDataService, $log, authService){
+    var vm    = this;
+    vm.auth   = authService;
     vm.user   = userDataService;
+
+    vm.login = {
+      handle:   "ferny",
+      password: "12345"
+    };
+
+    vm.logInUser = function () {
+      $log.log("logging in : ", vm.login)
+      var pr = vm.auth.logIn(vm.login)
+    };
 
     vm.createUser = function() {
       var pr = vm.user.create();

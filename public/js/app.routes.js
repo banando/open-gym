@@ -1,8 +1,7 @@
 (function() {
   angular
-    .module('app', ['ui.router', 'ngResource'])
+    .module('app')
     .config(router);
-
 
     router.$inject = ["$stateProvider", "$urlRouterProvider"];
 
