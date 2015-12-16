@@ -15,13 +15,9 @@ function userDataService($http, $log) {
     password:   "12345",
     create:     create,
     clear:      clear,
-    isLoggedIn: isLoggedIn
   };
   return user;
 
-  function isLoggedIn() {
-    return user.name.length !==0;
-  }
 
 
   function create() {

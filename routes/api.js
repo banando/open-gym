@@ -4,15 +4,17 @@ var express = require('express'),
 // Require controllers.
 var welcomeController = require('../controllers/welcome');
 var usersController   = require('../controllers/users');
-
+var authController    = require('../controllers/auth');
 // root path:
 router.get('/', welcomeController.index);
 
 // users resource paths:
 router.get('/users',        usersController.index);
 router.get('/users/:id',    usersController.show);
-router.post('/users',        usersController.create);
-router.put('/users/:id',     usersController.update);
+router.post('/users',       usersController.create);
+router.put('/users/:id',    usersController.update);
 router.delete('/users/:id', usersController.destroy)
+
+router.post('/token', authController.createToken);
 
 module.exports = router;

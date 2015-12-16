@@ -15,6 +15,8 @@ var mongoose    = require('./config/database'),
 // Instantiate a server application.
 var app = express();
 
+app.set('secret-key', process.env.SECRET_KEY);
+
 
 // Logging layer.
 app.use(logger('dev'));
