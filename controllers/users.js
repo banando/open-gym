@@ -12,9 +12,9 @@ var index = function(req, res, next){
 };
 
 var show = function(req, res, next){
-  User.findById(req.params.id, function(error, user){
-    if (error) res.json({message: 'Could not find user because ' + error});
-    res.send('users/show', {user: user});
+  User.findById(req.params.id, function(err, record){
+    if (err) res.json({message: 'Could not find user because ' + error});
+    res.send(record);
   });
 };
 
@@ -22,7 +22,7 @@ var create = function(req, res) {
   User.create(req.body, function(err, record){
     if (err){
       res.send(err);
-    }
+    };
     res.send(record);
   });
 };

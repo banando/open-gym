@@ -10,34 +10,29 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-resource.min.js"></script>
   <!-- load angular, ui.router, ngResource, my css and app.js and other angular stuff -->
 </head>
-<body ng-controller="MainController as vm">
+<body ng-controller="MainController as mainCtrl">
   <div class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        Open Gym
+        <a ui-sref="home" class="navbar-brand">Open Gym</a>
       </div>
+      <ul class="navbar-nav nav navbar-right">
+        <li ng-hide="mainCtrl.user.isLoggedIn()"><a ui-sref="login">Login</a></li>
+        <li ng-hide="mainCtrl.user.isLoggedIn()"><a ui-sref="register">Register</a></li>
+        <li ng-show="mainCtrl.user.isLoggedIn()"><a ng-click="mainCtrl.logOut()">Logout</a></li>
+      </ul>
     </div>
   </div>
-  <div class="container">
-    <h1 class="jumbotron">Basketball</h1>
-    <h3>get your ball on {{vm.user.name}}</h3>
-  </div>
-    <!-- nav and stuff for every state -->
-    <div class="container">
-      <div class="container center">
-        <form ng-submit="vm.createUser()" class="pure-form" id="user">
-          <input ng-model="vm.user.email" type="email" name="email" placeholder="user@domain.com">
-          <input ng-model="vm.user.handle" type="text" name="handle" placeholder="username">
-          <input ng-model="vm.user.password" type="password" name="password" placeholder="password">
-          <button type="submit">submit</button>
-        </form>
-      </div>
 
-    </div>
+    <!-- nav and stuff for every state -->
+
+
+
   <ui-view></ui-view>
   <script src="/js/app.js"></script>
   <script src="/controllers/main-controller.js"></script>
   <script src="/controllers/login-controller.js"></script>
+  <script src="/controllers/register-controller.js"></script>
   <script src="/services/user.dataservice.js"></script>
 </body>
 </html>
