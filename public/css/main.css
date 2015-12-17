@@ -11,9 +11,10 @@ body {
   font-size: 14px;
   padding: 50px;
   background-color: black;
-  background-image: url('http://www.selwyn.school.nz/DataStore/Pages/PAGE_3471/Docs/Documents/Basketball.jpg');
+  background-image: url('./../assets/basketballFlipped.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+
 
 }
 
