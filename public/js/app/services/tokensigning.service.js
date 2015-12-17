@@ -5,11 +5,12 @@
     .module('app')
     .factory("tokenSigningService", tokenSigningService);
 
-  tokenSigningService.$inject = ["tokenService", "$log"];
+  tokenSigningService.$inject = ["tokenService", "$log", '$location', '$q'];
 
-  function tokenSigningService(tokenService, $log) {
+  function tokenSigningService(tokenService, $log, $location, $q) {
     return {
-      request: signWithToken
+      request:       signWithToken
+      responseError: redirectToLogin
     };
 
     function signWithToken(request) {
@@ -20,5 +21,16 @@
       }
       return request;
     }
+
+    function redirectToLogin(response) {
+      if (response.status == 403) {
+        tokenService.clear();
+        $location.path('/login');
+      }
+
+      return $q.reject(response);
+    }
+
+
   }
 })();

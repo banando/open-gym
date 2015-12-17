@@ -19,11 +19,15 @@ var show = function(req, res, next){
 };
 
 var create = function(req, res) {
-  User.create(req.body, function(err, record){
-    if (err){
-      res.send(err);
-    };
-    res.send(record);
+  var user = new User();
+  user.name = req.body.name;
+  user.handle = req.body.handle;
+  user.password = req.body.password;
+  user.email = req.body.email
+  user.save(function(err){
+    if (err) res.send(err);
+
+    res.json({ message: "User created!" });
   });
 };
 

@@ -10,11 +10,11 @@ router.get('/', welcomeController.index);
 
 // users resource paths:
 router.get('/users',        usersController.index);
-router.get('/users/:id',    usersController.show);
 router.post('/users',       usersController.create);
-router.put('/users/:id',    usersController.update);
-router.delete('/users/:id', usersController.destroy)
+router.get('/users/:id',    authController.tokenVerify, usersController.show);
+router.put('/users/:id',    authController.tokenVerify, usersController.update);
+router.delete('/users/:id', authController.tokenVerify, usersController.destroy)
 
-router.post('/token', authController.createToken);
+router.post('/token', authController.userAuth);
 
 module.exports = router;
