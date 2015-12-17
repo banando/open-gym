@@ -3,11 +3,38 @@ html,
 body {
   box-sizing: border-box;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: black;
 }
 
 body {
   font-size: 14px;
   padding: 50px;
+  background-color: black;
+  background-image: url('http://www.selwyn.school.nz/DataStore/Pages/PAGE_3471/Docs/Documents/Basketball.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 a { color: #00B7FF; }
+
+.jumbotron {
+  background-color:  rgba(207, 83, 0, .4);
+  border: black 2px solid;
+
+}
+
+
+.navbar {
+ background-color:  rgba(207, 83, 0, .4);
+ border: black 2px solid;
+
+}
+
+#map {
+  height: 500px;
+  width:  80%;
+  margin-bottom: 50px;
+  margin: 0 auto;
+}

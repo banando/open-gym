@@ -51,7 +51,10 @@ app.use(function(err, req, res, next) {
   // In development, the error handler will print stacktrace.
   err = (app.get('env') === 'development') ? err : {};
   res.status(err.status || 500);
-  res.render('error', {
+
+  console.log(err)
+
+  res.json({
     message: err.message,
     error: err
   });
@@ -62,6 +65,25 @@ function debugReq(req, res, next) {
   debug('query:',  req.query);
   debug('body:',   req.body);
   next();
+}
+
+function errorHandler(code, message, req, res) {
+  var title = '';
+  var responseJson = {};
+
+  res.status(code);
+  switch(code) {
+    case 400: title = '400 Bad Request';  break;
+    case 401: title = '401 Unauthorized'; break;
+    case 403: title = '403 Forbidden';    break;
+    case 404: title = '404 Not Found';    break;
+    case 422: title = '422 Unprocessable Entity';
+  }
+
+  responseJson.response = title;
+  if (message && message.length > 0) responseJson.message = message;
+
+  res.json(responseJson);
 }
 
 module.exports = app;

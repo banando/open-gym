@@ -1,10 +1,14 @@
 <div class="container">
+  <h1 class="jumbotron">get your ball on {{vm.user.name}}</h1>
+
+</div>
+
+<div class="container">
   <div class="container center">
-    <form ng-submit="" class="pure-form" id="user">
-      <input ng-model="registerCtrl.user.handle" type="text" name="handle" placeholder="username">
-      <input ng-model="registerCtrl.user.password" type="password" name="password" placeholder="password">
+    <form ng-submit="loginCtrl.logIn()" class="pure-form" id="user">
+      <input ng-model="loginCtrl.user.handle" type="text" name="handle" placeholder="username">
+      <input ng-model="loginCtrl.user.password" type="password" name="password" placeholder="password">
       <button type="submit">submit</button>
     </form>
   </div>
 </div>
-need to add ng-submit

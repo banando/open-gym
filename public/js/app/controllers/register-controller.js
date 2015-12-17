@@ -14,6 +14,7 @@
     vm.user   = userDataService;
 
     vm.login = {
+      email:    "fern@email.com",
       handle:   "ferny",
       password: "12345"
     };

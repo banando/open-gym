@@ -6,27 +6,28 @@
     .module('app')
     .controller("LoginController", LoginController);
 
-  LoginController.$inject = ["$state", "userDataService", "$log"];
+  LoginController.$inject = ["$state", "userDataService", "$log", "authService"];
 
-  function LoginController($state, userDataService, $log){
+  function LoginController($state, userDataService, $log, authService){
     var vm = this;
 
-    vm.user   = userDataService;
-    vm.logIn  = login;
-
-    vm.userHold = {
-      handle:   ""
+    vm.user   = {
+      handle:   "ferny3",
+      password: "12345"
     }
-
-    function login(name) {
-      $log.debug("logging in :", vm.userHold.name);
-
-      vm.user.handle    = vm.userHold.name;
-      vm.userHold.handle= "";
+    vm.logIn  = logIn;
+    vm.auth   = authService;
 
 
-      //$state.go('');
-    }
+    function logIn() {
+      vm.auth
+        .logIn(vm.user)
+        .then(function() {
+          $state.go('home');
+        });
+    };
+
+
 
   };
 
