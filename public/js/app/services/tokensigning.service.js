@@ -9,7 +9,7 @@
 
   function tokenSigningService(tokenService, $log, $location, $q) {
     return {
-      request:       signWithToken
+      request:       signWithToken,
       responseError: redirectToLogin
     };
 
