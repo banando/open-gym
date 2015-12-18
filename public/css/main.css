@@ -1,10 +1,14 @@
+@font-face {
+    font-family: sportsfont;
+    src: url('./../assets/sportscenter.ttf');
+}
 *,
 html,
 body {
   box-sizing: border-box;
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: sportsfont, bold;
   text-align: center;
-  color: black;
+  color: orange;
 }
 
 body {
