@@ -1,7 +1,7 @@
 (function() {
 
   angular
-    .module('app', ['ui.router', 'ngResource']);
+    .module('app', ['ui.router', 'ngResource', 'uiGmapgoogle-maps']);
 
 })();
 

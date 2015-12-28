@@ -7,8 +7,11 @@
   <link rel="stylesheet" href="/css/main.css">
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-resource.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.2.1/angular-google-maps.min.js"></script>
   <!-- load angular, ui.router, ngResource, my css and app.js and other angular stuff -->
 </head>
 <body ng-controller="MainController as mainCtrl">
@@ -31,6 +34,13 @@
 
   <ui-view></ui-view>
   <div id="map"></div>
+  <ui-gmap-google-map center='{{mainCtrl.map.center}}'
+                    control='{Object}'
+                    zoom='{{mainCtrl.map.zoom}}' >
+
+    <!-- other ui-gmap-directives here -->
+
+</ui-gmap-google-map>
 
 
   <script src="/js/app.module.js"></script>
