@@ -5,7 +5,6 @@ var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
-var maps         = require('angular-google-maps');
 var lodash       = require('lodash');
 
 
