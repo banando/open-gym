@@ -6,9 +6,9 @@
     .module('app')
     .controller("MainController", MainController);
 
-  MainController.$inject = ['$state', 'userDataService', '$log', "authService", "tokenService", "uiGmapGoogleMapApi", "uiGmapgoogle-maps"];
+  MainController.$inject = ['$state', 'userDataService', '$log', "authService", "tokenService", "uiGmapgoogle-map"];
 
-  function MainController($state, userDataService, $log, authService, tokenService, uiGmapGoogleMapApi, uiGmapgoogle-maps){
+  function MainController($state, userDataService, $log, authService, tokenService, uiGmapGoogleMapApi){
     var vm = this;
 
     vm.user   = userDataService;
@@ -21,7 +21,7 @@
         longitude: -73
       },
       zoom: 8
-    }
+    };
 
     function logOut() {
       $log.debug("logging out: ", vm.user.name);

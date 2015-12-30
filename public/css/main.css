@@ -36,6 +36,9 @@ a { color: #00B7FF; }
  border: black 2px solid;
 
 }
+.angular-google-map-container {
+  height: 400px;
+}
 
 #map {
   height: 500px;
