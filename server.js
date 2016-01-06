@@ -5,7 +5,9 @@ var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
-var lodash       = require('lodash');
+var _            = require('lodash');
+var n            = require('nonce')();
+var qs           = require('querystring');
 
 
 require('dotenv').load();
