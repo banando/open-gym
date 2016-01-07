@@ -6,7 +6,7 @@
     .module('app')
     .controller("MainController", MainController);
 
-  MainController.$inject = ['$state', 'userDataService', '$log', "authService", "tokenService", "uiGmapgoogle-map"];
+  MainController.$inject = ['$state', 'userDataService', '$log', "authService", "tokenService", "uiGmapGoogleMapApi"];
 
   function MainController($state, userDataService, $log, authService, tokenService, uiGmapGoogleMapApi){
     var vm = this;
@@ -16,11 +16,11 @@
     vm.auth   = authService;
     vm.token  = tokenService;
     vm.map    = {
-      center: {
-        latitude: 45,
-        longitude: -73
+      center : {
+        latitude: 34,
+        longitude: -118
       },
-      zoom: 8
+      zoom: 6
     };
 
     function logOut() {
@@ -31,9 +31,21 @@
       vm.user.email   = "";
       vm.user.password= "";
     }
+    var map;
+    var geocoder = new google.maps.Geocoder;
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        console.log(position);
+        vm.map = {
+          center: {latitude: position.coords.latitude, longitude: position.coords.longitude},
+          zoom: 10
+          };
+      });
+    };
 
 
-    vm.$state = $state;
+
+
     uiGmapGoogleMapApi.then(function(maps) {
 
     });

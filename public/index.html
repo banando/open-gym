@@ -8,7 +8,8 @@
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script src="//code.angularjs.org/1.4.8/angular-route.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+  <script src="http://cdn.rawgit.com/nmccready/angular-simple-logger/0.0.1/dist/index.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-resource.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.2.1/angular-google-maps.min.js"></script>
@@ -33,16 +34,15 @@
   <!-- nav and stuff for every state -->
 
   <ui-view></ui-view>
-  <div id="map"></div>
-  <ui-gmap-google-map center='{{mainCtrl.map.center}}' zoom='{{mainCtrl.map.zoom}}'>
-    <!-- other ui-gmap-directives here -->
 
-  </ui-gmap-google-map>
+  <div class="container">
+    <ui-gmap-google-map center='mainCtrl.map.center' zoom='mainCtrl.map.zoom'></ui-gmap-google-map>
+  </div>
 
 
   <script src="/js/app.module.js"></script>
-  <script src="/js/app.routes.js"></script>
   <script src="/js/app.config.js"></script>
+  <script src="/js/app.routes.js"></script>
   <script src="/js/app/services/auth.service.js"></script>
   <script src="/js/app/services/token.service.js"></script>
   <script src="/js/app/services/tokensigning.service.js"></script>
@@ -51,8 +51,7 @@
   <script src="/js/app/controllers/login-controller.js"></script>
   <script src="/js/app/controllers/register-controller.js"></script>
   <script src="/js/app/controllers/login-controller.js"></script>
-  <script src="/js/app/controllers/register-controller.js"></script>
-  <script src="/js/app/map.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBYNbyEqD66pKe-9TQ1QNqWZhT9S0kuIw4"></script>
 
 
 </body>
