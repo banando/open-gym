@@ -6,6 +6,7 @@
     .config(configure, map);
 
 
+
   configure.$inject = ["$httpProvider"];
   map.$inject = ["uiGmapGoogleMapApiProvider"];
 

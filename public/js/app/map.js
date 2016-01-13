@@ -213,8 +213,19 @@ function initMap() {
       courts.businesses.forEach(function(court) {
         var marker = new google.maps.Marker({
           map: map,
-          position: court.location.coordinate
-        })
+          position: court.location.coordinate,
+          icon: '/assets/hoop.png'
+        });;
+        var infowindow = new google.maps.InfoWindow({
+            content: court.name
+        });
+        marker.addListener('mouseover', function() {
+            infowindow.open(map, marker);
+        });
+        marker.addListener('mouseout', function() {
+            infowindow.close(map, marker);
+        });
+
       })
     })
   }

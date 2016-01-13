@@ -19,6 +19,10 @@
       windowOptions: {
         visible: true
       },
+      icon : {
+        url : "/assets/ballicon2.png",
+        scaledSize: {height: 50, width: 50}
+      },
       title:  "You are here.",
       id:     "1"
     };

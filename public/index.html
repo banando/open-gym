@@ -37,13 +37,14 @@
 
   <div class="container">
     <ui-gmap-google-map center='mainCtrl.map.center' zoom='mainCtrl.map.zoom'>
-      <ui-gmap-marker coords="mainCtrl.marker.coord" idkey='mainCtrl.marker.id' click='mainCtrl.onClick()' options="{icon:'/assets/ballicon.jpeg'}">
+      <ui-gmap-marker coords="mainCtrl.marker.coord" idkey='mainCtrl.marker.id' click='mainCtrl.onClick()' options="{icon: mainCtrl.marker.icon}">
         <ui-gmap-window options="mainCtrl.marker.windowOptions" closeClick="closeClick()">
           <div>{{mainCtrl.marker.title}}</div>
         </ui-gmap-window>
       </ui-gmap-marker>
-      <ui-gmap-marker ng-repeat="court in mainCtrl.courts" coords="court.location.coordinate" idkey="court.id"></ui-gmap-marker>
+      <ui-gmap-marker ng-repeat="court in mainCtrl.courts" coords="court.location.coordinate" idkey="court.id"options="{icon:'/assets/hoop.png'}"></ui-gmap-marker>
     </ui-gmap-google-map>
+
   </div>
 
 
@@ -59,6 +60,7 @@
   <script src="/js/app/controllers/login-controller.js"></script>
   <script src="/js/app/controllers/register-controller.js"></script>
   <script src="/js/app/controllers/login-controller.js"></script>
+
 
 
 </body>
