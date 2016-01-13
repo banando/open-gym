@@ -36,13 +36,21 @@
   <ui-view></ui-view>
 
   <div class="container">
-    <ui-gmap-google-map center='mainCtrl.map.center' zoom='mainCtrl.map.zoom'></ui-gmap-google-map>
+    <ui-gmap-google-map center='mainCtrl.map.center' zoom='mainCtrl.map.zoom'>
+      <ui-gmap-marker coords="mainCtrl.marker.coords" idkey='mainCtrl.marker.id' click='mainCtrl.onClick()'>
+        <ui-gmap-window options="mainCtrl.marker.windowOptions" closeClick="mainCtrl.closeClick()" isIconVisibleOnClick="true">
+          <div>hello</div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker ng-repeat="courts in mainCtrl.courts" coords="courts.location.coordinate"></ui-gmap-marker>
+    </ui-gmap-google-map>
   </div>
 
 
   <script src="/js/app.module.js"></script>
   <script src="/js/app.config.js"></script>
   <script src="/js/app.routes.js"></script>
+  <script src="/assets/oauth.js"></script>
   <script src="/js/app/services/auth.service.js"></script>
   <script src="/js/app/services/token.service.js"></script>
   <script src="/js/app/services/tokensigning.service.js"></script>
@@ -51,7 +59,6 @@
   <script src="/js/app/controllers/login-controller.js"></script>
   <script src="/js/app/controllers/register-controller.js"></script>
   <script src="/js/app/controllers/login-controller.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBYNbyEqD66pKe-9TQ1QNqWZhT9S0kuIw4"></script>
 
 
 </body>
