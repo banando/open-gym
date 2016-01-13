@@ -37,12 +37,12 @@
 
   <div class="container">
     <ui-gmap-google-map center='mainCtrl.map.center' zoom='mainCtrl.map.zoom'>
-      <ui-gmap-marker coords="mainCtrl.marker.coords" idkey='mainCtrl.marker.id' click='mainCtrl.onClick()'>
-        <ui-gmap-window options="mainCtrl.marker.windowOptions" closeClick="mainCtrl.closeClick()" isIconVisibleOnClick="true">
-          <div>hello</div>
+      <ui-gmap-marker coords="mainCtrl.marker.coord" idkey='mainCtrl.marker.id' click='mainCtrl.onClick()'>
+        <ui-gmap-window options="mainCtrl.marker.windowOptions" closeClick="closeClick()">
+          <div>{{mainCtrl.marker.title}}</div>
         </ui-gmap-window>
       </ui-gmap-marker>
-      <ui-gmap-marker ng-repeat="courts in mainCtrl.courts" coords="courts.location.coordinate"></ui-gmap-marker>
+      <ui-gmap-marker ng-repeat="court in mainCtrl.courts" coords="court.location.coordinate" idkey="court.id"></ui-gmap-marker>
     </ui-gmap-google-map>
   </div>
 

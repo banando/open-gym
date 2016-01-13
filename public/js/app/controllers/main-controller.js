@@ -15,13 +15,6 @@
     vm.logOut = logOut;
     vm.auth   = authService;
     vm.token  = tokenService;
-    vm.map    = {
-      center : {
-        latitude: 34,
-        longitude: -118
-      },
-      zoom: 8
-    };
     vm.marker = {
       windowOptions: {
         visible: true
@@ -29,6 +22,7 @@
       title:  "You are here.",
       id:     "1"
     };
+    vm.courts = [];
 
     vm.onClick = function() {
       console.log(vm.marker);
@@ -60,13 +54,13 @@
     var map;
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
+        yelpCall(position);
         console.log(position);
+        vm.marker.coord = {latitude: position.coords.latitude, longitude: position.coords.longitude}
         vm.map = {
           center: {latitude: position.coords.latitude, longitude: position.coords.longitude},
           zoom: 12
           };
-        vm.marker.coords = {latitude: position.coords.latitude, longitude: position.coords.latitude}
-        yelpCall(position);
       });
 
     };
@@ -88,7 +82,7 @@
       var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, {encodeSignature: false});
       params['oauth_signature'] = signature;
       $http.jsonp(url, {params: params}).success(function(data){
-          vm.courts = data.buisnesses;
+          vm.courts = data.businesses;
           console.log(data);
       });
     };
