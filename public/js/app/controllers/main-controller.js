@@ -17,7 +17,7 @@
     vm.token  = tokenService;
     vm.marker = {
       windowOptions: {
-        visible: true
+        visible: false
       },
       icon : {
         url : "/assets/ballicon2.png",

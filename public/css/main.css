@@ -46,4 +46,7 @@ a { color: #00B7FF; }
   margin-bottom: 50px;
   margin: 0 auto;
 }
+.infoWindow a {
+  display: block;
+}
 
