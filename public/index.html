@@ -37,7 +37,7 @@
 
   <div class="container">
     <ui-gmap-google-map center='mainCtrl.map.center' zoom='mainCtrl.map.zoom'>
-      <ui-gmap-marker coords="mainCtrl.marker.coord" idkey='mainCtrl.marker.id' click='mainCtrl.onClick()'>
+      <ui-gmap-marker coords="mainCtrl.marker.coord" idkey='mainCtrl.marker.id' click='mainCtrl.onClick()' options="{icon:'/assets/ballicon.jpeg'}">
         <ui-gmap-window options="mainCtrl.marker.windowOptions" closeClick="closeClick()">
           <div>{{mainCtrl.marker.title}}</div>
         </ui-gmap-window>
